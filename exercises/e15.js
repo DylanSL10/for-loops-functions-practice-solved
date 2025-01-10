@@ -5,7 +5,7 @@
 // NOTE: You can NOT use the array.concat() method in your code
 
 export function concatArrays(arr1, arr2) {
-  // Your code goes here...
+  return [...arr1, ...arr2];
 
 }
 

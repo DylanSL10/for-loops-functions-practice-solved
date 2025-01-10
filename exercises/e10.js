@@ -5,7 +5,10 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+  const lowercaseLetter = letter.toLowerCase(); // Ensure case-insensitive matching
+  return array
+    .filter(account => account.name.toLowerCase().includes(lowercaseLetter))
+    .map(account => account.name);
 }
 
 // === TEST YOURSELF ===

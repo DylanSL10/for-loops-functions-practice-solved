@@ -6,7 +6,19 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
+  const result = [];
+
+  
+  array.forEach(item => {
+    
+    if (Array.isArray(item)) {
+      result.push(...item); 
+    } else {
+      result.push(item); 
+    }
+  });
+
+  return result;
 
 }
 

@@ -5,7 +5,21 @@
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithLeastPositiveBalance(array) {
-  // Your code goes here...
+
+    const positiveBalanceAccounts = array.filter(account => account.balance > 0);
+  
+    // If no accounts have a positive balance, return an empty array
+    if (positiveBalanceAccounts.length === 0) {
+      return [];
+    }
+  
+    // Find the account with the smallest positive balance
+    const accountWithLeastBalance = positiveBalanceAccounts.reduce((minAccount, currentAccount) => {
+      return currentAccount.balance < minAccount.balance ? currentAccount : minAccount;
+    });
+  
+    // Return the result as an array
+    return [accountWithLeastBalance];
   
 }
 
