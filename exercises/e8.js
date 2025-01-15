@@ -5,17 +5,13 @@
 // getClientWithGreatestBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithGreatestBalance(array) {
-  if (array.length === 0) {
-    return [];
+  let greatestBalanceAccount = null;
+  for (let i = 0; i < array.length; i++) {
+    if (!greatestBalanceAccount || array[i].balance > greatestBalanceAccount.balance) {
+      greatestBalanceAccount = array[i];
+    }
   }
-
-  // Find the account with the greatest balance
-  const accountWithGreatestBalance = array.reduce((maxAccount, currentAccount) => {
-    return currentAccount.balance > maxAccount.balance ? currentAccount : maxAccount;
-  });
-
-  // Return the result as an array
-  return [accountWithGreatestBalance];
+  return greatestBalanceAccount ? [greatestBalanceAccount] : [];
 
 }
 

@@ -7,19 +7,18 @@
 
 export function flatArrays(array) {
   const result = [];
-
   
-  array.forEach(item => {
-    
-    if (Array.isArray(item)) {
-      result.push(...item); 
+  for (let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) { 
+      for (let j = 0; j < array[i].length; j++) {
+        result.push(array[i][j]);
+      }
     } else {
-      result.push(item); 
+      result.push(array[i]);
     }
-  });
-
+  }
+  
   return result;
-
 }
 
 

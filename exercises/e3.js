@@ -10,11 +10,11 @@
 
 export function getAverage(array) {
   let sum = 0;
-  array.forEach (item => {
-    sum += item;
-  });
-  sum = sum / array.length;
-  return sum;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum / array.length;
+  
 }
 
 
@@ -26,14 +26,15 @@ export function getAverage(array) {
  * */ 
 
 export function getStringSum(str) {
-  let int = 0;
-  str.split('').forEach (char => {
-    if(!isNaN(char)) {
-      int += parseInt(char);
+  let sum = 0; 
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char >= '0' && char <= '9') { 
+      sum += parseInt(char);
     }
-  });
-
-  return int;
+  }
+  return sum;
+    
 }
 
 
